@@ -135,6 +135,7 @@ img {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         padding: 8rem 0;
+        animation: fadeUp 1.5s ease;
     }
 
     .intro-box {
@@ -163,15 +164,21 @@ img {
         align-items: center;
         width: 27.8125rem;
         height: 3.4375rem;
-        padding: 0;
-    }
-
-    .rating-item:nth-child(2) {
-        margin-right: 3rem;
+        padding: 0;        
     }
 
     .rating-item:first-child {
+        animation: slideLeft 1.5s ease;
         margin-right: 6rem;
+    }
+
+    .rating-item:nth-child(2) {
+        animation: slideLeft 1s ease;
+        margin-right: 3rem;
+    }
+
+    .rating-item:last-child {
+        animation: slideLeft .5s ease;
     }
 
     .stars-box {
@@ -190,14 +197,31 @@ img {
         display: flex;
         gap: 1.875rem;
         align-items: flex-start;
+        max-height: auto;    
+    }
+
+    .review-item:first-child {
+        animation: slideDown .5s ease-in-out;
     }
 
     .review-item:nth-child(2) {
         margin-top: 1rem;
+        animation: slideDown 1s ease-in-out;
     }
 
     .review-item:last-child {
         margin-top: 2rem;
+        animation: slideDown 1.5s ease-in-out;
     }
-    
+
+}
+
+@keyframes slideLeft {
+    from {margin-right: -3rem;}
+}
+@keyframes fadeUp {
+    from {opacity: 0;}
+}
+@keyframes slideDown {
+    from {margin-top: -3rem;}
 }
